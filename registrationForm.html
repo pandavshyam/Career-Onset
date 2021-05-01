@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MITAOE</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="public/css/materalize/materialize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="public/css/materalize/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src="public/js/jquery/jquery-3.2.1.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+
+
+    <link rel="stylesheet" href="public/css/bootstrap/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="registrationForm.js"></script>
+
+    <script src="public/js/materalize/materialize.js"></script>
+    <script src="public/js/materalize/materialize.min.js"></script>
+
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h3 {
+        cursor: pointer;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .container ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    input[id="firstname"] {
+        text-transform: uppercase;
+    }
+    
+    input[id="lastname"] {
+        text-transform: uppercase;
+    }
+    
+    input[id="fathername"] {
+        text-transform: uppercase;
+    }
+    
+    input[id="mothername"],
+    input[id="pcountry"],
+    input[id="pstate"],
+    input[id="pcity"],
+    input[id="ppcountry"],
+    input[id="ppstate"],
+    input[id="ppcity"] {
+        text-transform: uppercase;
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="nav-wrapper transparent" id="mainNav">
+            <div class="container">
+                <a href="#" class="brand-logo" style="color: blue;"><b>MITAOE</b></a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons" style="color: black;">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Logout</a></li>
+
+
+                </ul>
+
+                <ul class="sidenav gray lighten-2" id="mobile-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    li><a href="#">Logout</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <br>
+    <div class="contact">
+        <center>
+            <h1><b>Registration Form</b></h1>
+        </center>
+
+        <section style="margin-top: 50px;" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <form class="contact__form" method="POST" action="#" autocomplete="off">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 style="color: blue;"><b>Basic Detail</b></h3>
+                                    <!-- form element -->
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="prn" id="prn" type="text" class="validate" required maxlength="10" aria-required="true">
+                                                    <label for="prn">PRN</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <select id='salutation' class="btn blue darken-1" name="salutation" required style="color: white;">
+                                                        <option value="" disabled selected style="color: white">Salutation</option>
+                                                        <option value="Mr">Mr.</option>
+                                                        <option value="Ms">Ms.</option>
+                                                        <option value="Mrs">Mrs.</option>
+                                                        <option value="Miss">Miss.</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input id="firstname" name="firstname" type="text" class="" required aria-required="true">
+                                                    <label for="firstname">First Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="lastname" name="lastname" type="text" class="" required aria-required="true">
+                                                    <label for="lastname">Last Name</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input id="fathername" name="fathername" type="text" class="" required aria-required="true">
+                                                    <label for="fathername">Father Name</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="mothername" name="mothername" type="text" class="" required aria-required="true">
+                                                    <label for="mothername">Mother Name</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <select id='gender' class="btn blue darken-1" name="gender" required style="color: white;">
+                                                        <option value="" disabled selected style="color: black">Gender</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Other">Other</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="dob" type="text" class="datepicker" required>
+                                                    <label for="dob">DOB</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s12" id="uphoto">
+                                                    <label class="custom-file-upload" id="photo" for="myphoto">
+                                                        <a class="btn blue darken-1"><input style="display: none;" required id="myphoto" type="file" accept=".png, .jpg, .jpeg"><p id='myfilephoto' style="color: white;">Upload Photo</p></a>
+                                                    </label>
+                                                </div>
+                                            </div><br><br><br>
+                                            <img id="image_upload_preview" src="" alt="your image" width="150" height="150" />
+                                        </div>
+                                    </div>
+                                    <!-- end form element -->
+
+
+                                </div>
+                            </div>
+
+
+                            <!-- Communication Detatil -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 id="comm" style="color: blue;"><b>Communication Detail</b></h3>
+                                    <!-- form element -->
+                                    <div class="row" id="commu"><br>
+                                        <div class="col s12">
+                                            <br>
+                                            <h5 style="color: blue;">Present Address</h5>
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="presentaddress" id="presentaddress" type="text" class="validate" aria-required="true">
+                                                    <label for="presentaddress">Address Line 1</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="input-field col s4">
+                                                    <input name="pcountry" id="pcountry" type="text" class="validate" aria-required="true" list="" value="INDIA">
+                                                    <label for="pcountry">Country</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input name="pstate" id="pstate" type="text" class="validate" aria-required="true" value="MAHARASHTRA">
+                                                    <label for="pstate">State</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input name="pcity" id="pcity" type="text" class="validate" aria-required="true" value="PUNE">
+                                                    <label for="pcity">City</label>
+                                                </div>
+
+                                            </div>
+
+                                            <h5 style="color: blue;">Permanent Address</h5>
+                                            <div class="row">
+                                                <div class="input-field col s4">
+                                                    <input name="permanentaddress" id="permanentaddress" type="text" class="validate" aria-required="true">
+                                                    <label for="permanentaddress">Address Line 1</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s4">
+                                                    <input name="ppcountry" id="ppcountry" type="text" class="validate" aria-required="true" list="" value="INDIA">
+                                                    <label for="ppcountry">Country</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input name="ppstate" id="ppstate" type="text" class="validate" aria-required="true">
+                                                    <label for="ppstate">State</label>
+                                                </div>
+                                                <div class="input-field col s4">
+                                                    <input name="ppcity" id="ppcity" type="text" class="validate" aria-required="true">
+                                                    <label for="ppcity">City</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="mobilenumber1" id="mobilenumber1" type="text" class="validate" required maxlength="10" aria-required="true">
+                                                    <label for="mobilenumber1">Mobile Number</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input name="mobilenumber2" id="mobilenumber2" type="text" class="validate" maxlength="10">
+                                                    <label for="mobilenumber2">Parent's Mobile Number</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="pemail" id="pemail" type="email" class="validate">
+                                                    <label for="pemail">Personal Email ID</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input name="cemail" id="cemail" type="email" class="validate" required aria-required="true">
+                                                    <label for="cemail">College Email ID</label>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <!-- end form element -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Educational Detail -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 id="eduu" style="color: blue;"><b>Educational Detail</b></h3>
+                                    <!-- form element -->
+                                    <div class="row" id="edu">
+                                        <div class="col s12">
+                                            <h5 style="color: blue;">&nbsp;Details of Examination Passed</h5>
+                                            <div class="row">
+                                                <table class="responsive-table">
+                                                    <thead>
+                                                        <tr class="heading">
+                                                            <th scope="col" style="text-align: center;">Examination</th>
+                                                            <th scope="col" style="text-align: center;">Institution</th>
+                                                            <th scope="col" style="text-align: center;">Year of Commencement</th>
+                                                            <th scope="col" style="text-align: center;">Year of Passing</th>
+                                                            <th scope="col" style="text-align: center;">Class/Division</th>
+                                                            <th scope="col" style="text-align: center;">%Marks</th>
+                                                        </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="">
+                                                            <th style="text-align: center;" scope="col">S.S.C.(X)</th>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionssc" placeholder="Institution" required></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocssc" placeholder="Year" maxlength="4" required></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopssc" placeholder="Year" maxlength="4" required></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classssc" placeholder="Class/Division" required></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="perssc" placeholder="%Marks" maxlength="8" required></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: center;"><b>H.S.C.(XII)</b></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionhsc" placeholder="Institution"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yochsc" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yophsc" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classhsc" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="perhsc" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align: center;"><b>Diploma</b></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutiondip" placeholder="Institution"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocdip" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopdip" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classdip" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="perdip" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <h4 style="color: blue;">&nbsp;&nbsp;&nbsp;Details of Engineering</h4>
+                                                <table class="responsive-table">
+                                                    <thead>
+                                                        <tr class="heading">
+                                                            <th colspan="2" scope="col" style="text-align: center;">Year</th>
+                                                            <th scope="col" style="text-align: center;">Institution</th>
+                                                            <th scope="col" style="text-align: center;">Year of Commencement</th>
+                                                            <th scope="col" style="text-align: center;">Year of Passing</th>
+                                                            <th scope="col" style="text-align: center;">Class/Division</th>
+                                                            <th scope="col" style="text-align: center;">%Marks</th>
+                                                        </tr>
+
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="">
+                                                            <td rowspan="2"><b>FY</b></td>
+                                                            <td>I Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionfysem1" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocfysem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopfysem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classfysem1" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="perfysem1" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+                                                        <tr class="">
+
+                                                            <td>II Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionfysem2" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocfysem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopfysem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classfysem2" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="perfysem2" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+
+                                                        <tr class="">
+                                                            <td rowspan="2"><b>SY</b></td>
+                                                            <td>I Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionsysem1" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocsysem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopsysem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classsysem1" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="persysem1" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+                                                        <tr class="">
+
+                                                            <td>II Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionsysem2" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocsysem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopsysem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classsysem2" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="persysem2" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+
+                                                        <tr class="">
+                                                            <td rowspan="2"><b>TY</b></td>
+                                                            <td>I Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutiontysem1" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yoctysem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yoptysem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classtysem1" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="pertysem1" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+                                                        <tr class="">
+
+                                                            <td>II Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutiontysem2" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yoctysem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yoptysem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classtysem2" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="pertysem2" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+
+                                                        <tr class="">
+                                                            <td rowspan="2"><b>B.Tech</b></td>
+                                                            <td>I Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionfinalsem1" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocfinalsem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopfinalsem1" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classfinalsem1" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="perfinalsem1" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr>
+                                                        <tr class="">
+
+                                                            <td>II Semester</td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="institutionfinalsem2" placeholder="Institution" value="MITAOE"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yocfinalsem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="yopfinalsem2" placeholder="Year" maxlength="4"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="classfinalsem2" placeholder="Class/Division"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="" name="perfinalsem2" placeholder="%Marks" maxlength="8"></td>
+                                                        </tr><br>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <h4 style="color: blue;">&nbsp;&nbsp;&nbsp;No of Backlogs</h4>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s2">
+                                                    <select id='noOfBacklog' class="btn blue darken-1" name="noOfBacklog" required style="color: white;">
+                                                        <option value="" disabled selected style="color: black">No of Backlog</option>
+                                                        <option value="0" selected>0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+                                    <!-- end form element -->
+                                </div>
+                            </div>
+
+                            <!-- Internship Detail -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 id="int" style="color: blue;"><b>Internship Detail</b></h3>
+                                    <!-- form element -->
+                                    <div class="row" id="intern">
+                                        <div class="col s12" id="intern1"><br>
+                                            <h5 style="color: blue;">&nbsp;Internship 1</h5>
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="internship1cname" id="internship1cname" type="text" class="validate">
+                                                    <label for="internship1cname">Name of the Industry</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <h5>&nbsp;&nbsp;&nbsp;Training Period</h5>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input id="internship1startdate" type="text" class="datepicker">
+                                                    <label for="internship1startdate">Starting Date</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="internship1enddate" type="text" class="datepicker">
+                                                    <label for="internship1enddate">End Date</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s6" id="">
+                                                    <label class="custom-file-upload" id="" for="internship1certificate">
+                                                        <a class="btn blue darken-1"><input style="display: none;" id="internship1certificate" type="file" accept=".pdf, .jpg, .jpeg, .docx"><p id='internship1certificatep' style="color: white;">Upload Certificate</p></a>
+                                                    </label>
+                                                </div>
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <a class="btn blue darken-1" id='internshipdetailsadd' style="color: white;">Add another Internship Detail</a>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <br>
+                                            <div class="internship2div">
+                                                <h5 style="color: blue;">&nbsp;Internship 2</h5>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input name="internship2cname" id="internship2cname" type="text" class="validate">
+                                                        <label for="internship2cname">Name of the Industry</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <h5>&nbsp;&nbsp;&nbsp;Training Period</h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input id="internship2startdate" type="text" class="datepicker">
+                                                        <label for="internship2startdate">Starting Date</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <input id="internship2enddate" type="text" class="datepicker">
+                                                        <label for="internship2enddate">End Date</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12" id="">
+                                                        <label class="custom-file-upload" id="" for="internship2certificate">
+                                                        <a class="btn blue darken-1"><input style="display: none;" id="internship2certificate" type="file" accept=".pdf, .jpg, .jpeg, .docx"><p id='internship2certificatep' style="color: white;">Upload Certificate</p></a>
+                                                    </label>
+                                                    </div>
+                                                </div><br>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <a class="btn blue darken-1" id='internshipdetailsadd1' style="color: white;">Add another Internship Detail</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <div class="internship3div">
+                                                <h5 style="color: blue;">&nbsp;Internship 3</h5>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input name="internship3cname" id="internship3cname" type="text" class="validate">
+                                                        <label for="internship3cname">Name of the Industry</label>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+                                                    <h5>&nbsp;&nbsp;&nbsp;Training Period</h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s6">
+                                                        <input id="internship3startdate" type="text" class="datepicker">
+                                                        <label for="internship3startdate">Starting Date</label>
+                                                    </div>
+                                                    <div class="input-field col s6">
+                                                        <input id="internship3enddate" type="text" class="datepicker">
+                                                        <label for="internship3enddate">End Date</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s12" id="">
+                                                        <label class="custom-file-upload" id="" for="internship3certificate">
+                                                        <a class="btn blue darken-1"><input style="display: none;" id="internship3certificate" type="file" accept=".pdf, .jpg, .jpeg, .docx"><p id='internship3certificatep' style="color: white;">Upload Certificate</p></a>
+                                                    </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end form element -->
+                                </div>
+                            </div>
+
+
+                            <!-- Personal Skills -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 id="per" style="color: blue;"><b>Personal Skills</b></h3>
+                                    <!-- form element -->
+                                    <div class="row" id="skill">
+                                        <div class="col s12">
+                                            <div class="row">
+                                                <h5 style="color: blue;">&nbsp;&nbsp;&nbsp;Extra Curricular</h5>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="activities" id="activities" type="text" class="validate">
+                                                    <label for="activities">Activities</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="hobbies" id="hobbies" type="text" class="validate">
+                                                    <label for="hobbies">Hobbies</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <h5 style="color: blue;">&nbsp;&nbsp;&nbsp;Languages Known</h5>
+                                            </div>
+                                            <div class="row">
+                                                <table class="responsive-table">
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="language1" name="language1" placeholder="Language"></td>
+                                                            <td><label>
+                                                                    <input type="checkbox" class="" checked="checked" id="language1read" value="Read"/>
+                                                                    <span>Read</span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="" id="language1write" value="Write"/>
+                                                                    <span>Write</span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                    <input type="checkbox" class="" id="language1speak" value="Speak"/>
+                                                                    <span>Speak</span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="language2" name="language2" placeholder="Language"></td>
+                                                            <td><label>
+                                                                    <input type="checkbox" class="" checked="checked" id="language2read" value="Read1"/>
+                                                                    <span>Read</span>
+                                                                </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                        <input type="checkbox" class="" id="language2write" value="Write1"/>
+                                                                        <span>Write</span>
+                                                                    </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                        <input type="checkbox" class="" id="language2speak" value="Speak1"/>
+                                                                        <span>Speak</span>
+                                                                    </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="language3" name="language3" placeholder="Language"></td>
+                                                            <td><label>
+                                                                        <input type="checkbox" class="" checked="checked" id="language3read" value="Read2"/>
+                                                                        <span>Read</span>
+                                                                    </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                        <input type="checkbox" class="" id="language3write" value="Write2"/>
+                                                                        <span>Write</span>
+                                                                    </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                        <input type="checkbox" class="" id="language3speak" value="Speak3"/>
+                                                                        <span>Speak</span>
+                                                                    </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="language4" name="language4" placeholder="Language"></td>
+                                                            <td><label>
+                                                                            <input type="checkbox" class="" checked="checked" id="language4read" value="Read"/>
+                                                                            <span>Read</span>
+                                                                        </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                            <input type="checkbox" class="" id="language4write" value="Write"/>
+                                                                            <span>Write</span>
+                                                                        </label>
+                                                            </td>
+                                                            <td>
+                                                                <label>
+                                                                            <input type="checkbox" class="" id="language4speak" value="Speak"/>
+                                                                            <span>Speak</span>
+                                                                        </label>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end form element -->
+                                </div>
+                            </div>
+
+
+
+                            <!-- Projects Details -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 id="pro" style="color: blue;"><b>Projects Detail</b></h3>
+                                    <!-- form element -->
+                                    <div class="row" id="project">
+                                        <div class="col s12">
+                                            <div class="row">
+                                                <table class="responsive-table">
+                                                    <thead></thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td rowspan="4" style="color: blue;">Minor</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="minortitle" name="minortitle" placeholder="Title"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="minorplatform" name="minorplatform" placeholder="Platform Used"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="minorlang" name="minorlang" placeholder="Languages Used"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td rowspan="4" style="color: blue;">Mini</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="minititle" name="minititle" placeholder="Title"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="miniplatform" name="miniplatform" placeholder="Platform Used"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="minilang" name="minilang" placeholder="Languages Used"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td rowspan="4" style="color: blue;">Major</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="majortitle" name="majortitle" placeholder="Title"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="majorplatform" name="majorplatform" placeholder="Platform Used"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><input type="text" name="form-control input-sm" id="majorlang" name="majorlang" placeholder="Languages Used"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end form element -->
+                                </div>
+                            </div>
+
+                            <!-- Awards and Achivement -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 id="award" style="color: blue;"><b>Awards and Achivement</b></h3>
+                                    <!-- form element -->
+                                    <div class="row" id="Achivement">
+                                        <div class="col s12">
+                                            <div class="row">
+                                                <table class="responsive-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Type</th>
+                                                            <th>School</th>
+                                                            <th>JR.College/Polytechnic</th>
+                                                            <th>Engg.College</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><b>Awards</b></td>
+                                                            <td><input type="text" name="form-control input-sm" id="awardSchool" name="awardSchool" placeholder="Award"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="awardCollege" name="awardCollege" placeholder="Award"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="awardEngg" name="awardEngg" placeholder="Award"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Prizes</b></td>
+                                                            <td><input type="text" name="form-control input-sm" id="prizeSchool" name="prizeSchool" placeholder="Prize"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="prizeCollege" name="prizeCollege" placeholder="Prize"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="prizeEngg" name="prizeEngg" placeholder="Prize"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><b>Scholarship</b></td>
+                                                            <td><input type="text" name="form-control input-sm" id="scholarshipSchool" name="scholarshipSchool" placeholder="Scholarship"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="scholarshipCollege" name="scholarshipCollege" placeholder="Scholarship"></td>
+                                                            <td><input type="text" name="form-control input-sm" id="scholarshipEngg" name="scholarshipEngg" placeholder="Scholarship"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end form element -->
+                                </div>
+                            </div>
+
+
+                            <!-- Certificate  -->
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 id="cer" style="color: blue;"><b>Certificate</b></h3>
+                                    <!-- form element -->
+                                    <div class="row" class="certi" id="certi">
+                                        <div class="col s12">
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="certificate1" id="certificate1" type="text" class="validate">
+                                                    <label for="certificate1">Certificate About..e.g.Sports,Course</label>
+                                                </div>
+                                                <div class="input-field col s6" id="">
+                                                    <label class="custom-file-upload" id="" for="certificate1file">
+                                                        <a class="btn blue darken-1"><input style="display: none;" id="certificate1file" type="file" accept=".pdf, .jpg, .jpeg"><p id='certificate1p' style="color: white;">Upload Certificate</p></a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s6">
+                                                    <input name="certificate2" id="certificate2" type="text" class="validate">
+                                                    <label for="certificate2">Certificate About..e.g.Sports,Course</label>
+                                                </div>
+                                                <div class="input-field col s6" id="">
+                                                    <label class="custom-file-upload" id="" for="certificate2file">
+                                                        <a class="btn blue darken-1"><input style="display: none;" id="certificate2file" type="file" accept=".pdf, .jpg, .jpeg"><p id='certificate2p' style="color: white;">Upload Certificate</p></a>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end form element -->
+                                </div>
+                            </div>
+
+                            <div class="col s6 offset-s3 center" id="submitform">
+                                <button class="btn blue darken-2" type="submit" name="action" id="submitformdata" style="color: white;" formenctype="multipart/form-data">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+
+    <br>
+    <!-- footer -->
+
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l6">
+                    <h5>About Site</h5>
+                    <p>This Site is useful for the student in MITAOE about their Placement Activities.</p>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-copyright grey darken-4">
+            <div class="container center-align">
+                &copy; 2019 <a href="#">MITAOE</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        var ctr = 0;
+        $("#image_upload_preview").hide();
+        $(".internship2div").hide();
+        $(".internship3div").hide();
+        myimg = $("#image_upload_preview").val();
+
+        $("#internshipdetailsadd").click(function() {
+            $(".internship2div").fadeIn(300);
+        });
+        $("#internshipdetailsadd1").click(function() {
+            $(".internship3div").fadeIn(300);
+        });
+
+        $('#myphoto').change(function() {
+
+
+            var f = $('#myphoto').val().split('.')
+            var x = f[1]
+            if (x == 'jpeg' || x == 'png' || x == 'jpg') {
+                $('#myfilephoto').replaceWith($('#myphoto').val())
+
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#image_upload_preview').attr('src', e.target.result);
+
+                    };
+
+                    reader.readAsDataURL(this.files[0]);
+                }
+
+                $("#image_upload_preview").slideDown("slow");
+            } else {
+                alert('Invalid File \n Only IMAGE accepted')
+            }
+        });
+
+
+        $('.datepicker').datepicker({
+            //dateFormat:"dd/mm/yy",
+            yearRange: [1919, 2019],
+            changeMonth: true,
+
+            //changeYear:true
+
+        });
+
+        $('#myphoto').change(function() {
+            var f = $('#myphoto').val().split('.')
+            var x = f[1]
+            if (x == 'png' || x == 'jpeg' || x == 'jpg') {
+                $('#myfilephoto').replaceWith($('#myphoto').val())
+
+            } else {
+                alert('Invalid File \n Only PNG, JPEG, JPG accepted')
+            }
+
+        });
+
+        $('#internship1certificate').change(function() {
+            var f = $('#internship1certificate').val().split('.')
+            var x = f[1]
+            if (x == 'pdf' || x == 'jpeg' || x == 'jpg' || x == 'docx') {
+                $('#internship1certificatep').replaceWith($('#internship1certificate').val())
+
+            } else {
+                alert('Invalid File \n Only PDF, JPEG, JPG, DOCX accepted')
+            }
+
+        });
+
+
+        $('#certificate1file').change(function() {
+            var f = $('#certificate1file').val().split('.')
+            var x = f[1]
+            if (x == 'pdf' || x == 'jpeg' || x == 'jpg' || x == 'docx') {
+                $('#certificate1p').replaceWith($('#certificate1file').val())
+
+            } else {
+                alert('Invalid File \n Only PDF, JPEG, JPG, DOCX accepted')
+            }
+
+        });
+        $('#certificate2file').change(function() {
+            var f = $('#certificate2file').val().split('.')
+            var x = f[1]
+            if (x == 'pdf' || x == 'jpeg' || x == 'jpg' || x == 'docx') {
+                $('#certificate2p').replaceWith($('#certificate2file').val())
+
+            } else {
+                alert('Invalid File \n Only PDF, JPEG, JPG, DOCX accepted')
+            }
+
+        });
+        $(document).ready(function() {
+            $('#certi').hide();
+            $('#Achivement').hide();
+            $('#project').hide();
+            $('#skill').hide();
+            $('#intern').hide();
+            $('#edu').hide();
+            $('#commu').hide();
+
+
+            $('#comm').click(function() {
+                $('#commu').toggle(300);
+            });
+
+            $('#eduu').click(function() {
+                $('#edu').toggle(300);
+            });
+
+            $('#int').click(function() {
+                $('#intern').toggle(300);
+            });
+            $('#per').click(function() {
+                $('#skill').toggle(300);
+            });
+
+            $('#pro').click(function() {
+                $('#project').toggle(300);
+            });
+
+            $('#award').click(function() {
+                $('#Achivement').toggle(300);
+            });
+
+            $('#cer').click(function() {
+                $('#certi').toggle(300);
+            });
+        });
+    </script>
+
+</body>
+
+
+
+</html>

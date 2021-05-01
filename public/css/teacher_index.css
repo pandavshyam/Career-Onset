@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: 100%;
+}
+
+.item1 .view button {
+    width: 160px;
+    border: 1px solid black;
+    color: black;
+    background: white;
+    padding: 10px;
+    margin-left: 200px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.item1 .view button:hover {
+    background: blue;
+    color: white;
+    border: 1px solid blue;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    grid-gap: 60px;
+    margin-left: 120px;
+}
+
+.grid button {
+    width: 120px;
+}
+
+.guide h1 {
+    font-size: 44px;
+}
+
+.grids {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 40px;
+    margin-left: 170px;
+}
+
+.submissiongrid {
+    display: grid;
+    grid-template-columns: auto auto
+}
+
+.submissiongrid button {
+    width: 160px;
+    border: 1px solid black;
+    color: black;
+    background: white;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+.stepgrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 40px;
+}
+
+iframe {
+    height: 310px;
+    width: 515px;
+}
+
+.item2 {
+    margin-right: 50px;
+}
+
+@media screen and (max-width:670px) {
+    .brand-logo img {
+        height: 50px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 10px;
+        grid-gap: 30px;
+    }
+    .item1 h1 {
+        font-size: 26px;
+    }
+    .item1 .view button {
+        margin-left: 140px;
+    }
+    .item2 img {
+        width: 440px;
+    }
+    .cards h1 {
+        font-size: 41px;
+    }
+    .guide h1 {
+        font-size: 41px;
+    }
+    .contact h1 {
+        font-size: 41px;
+    }
+    .grids {
+        display: grid;
+        grid-template-columns: auto;
+        width: 50%;
+        margin-left: 0px;
+    }
+    iframe {
+        height: 300px;
+        width: 300px;
+        margin-left: 70px;
+    }
+    .item2 {
+        margin-left: 60px;
+    }
+    .main .caption font {
+        font-size: 40px;
+    }
+    .stepgrid {
+        display: grid;
+        grid-template-columns: auto;
+        width: 70%;
+        margin-left: 60px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .item2 img {
+        width: 300px;
+    }
+    .item1 .view button {
+        margin-left: 90px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .item2 img {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .item2 img {
+        width: 260px;
+    }
+}

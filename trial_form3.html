@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MITAOE</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .nav {
+        box-shadow: 0px 0px 10px 0px black;
+        height: 60px;
+        width: 100%;
+    }
+    
+    ul {
+        margin-top: 10px;
+        list-style: none;
+        display: inline-block;
+    }
+    
+    li {
+        display: inline;
+        cursor: pointer;
+    }
+    
+    .logo {
+        font-size: 37px;
+        font-family: 'Courier New', Courier, monospace;
+        margin-left: 100px;
+    }
+    
+    li:nth-child(2) {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 770px;
+    }
+    
+    li:nth-child(5) {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        display: none;
+    }
+    
+    li:nth-child(3) {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    li:nth-child(4) {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    li:nth-child(5) {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    li:nth-child(6) button {
+        background: #4258C2;
+        color: white;
+        padding: 11px;
+        border: 1px solid #4258c2;
+        width: 80px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    
+    li:hover {
+        border-bottom: 2px solid black;
+    }
+    
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+    
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .overlay a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .overlay a:hover,
+    .overlay a:focus {
+        color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+    
+    @media screen and (max-width: 670px) {
+        .overlay a {
+            font-size: 20px
+        }
+        .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+        li {
+            display: inline;
+            cursor: pointer;
+        }
+        li:nth-child(2) {
+            display: none;
+        }
+        li:nth-child(3) {
+            display: none;
+        }
+        li:nth-child(4) {
+            display: none;
+        }
+        li:nth-child(6) {
+            display: none;
+        }
+        li:nth-child(5) {
+            display: inline;
+        }
+        li span {
+            position: absolute;
+            margin-left: 90px;
+        }
+    }
+    
+    h5 {
+        font-size: 30px;
+        font-family: 'Roboto', sans-serif;
+        cursor: pointer;
+    }
+    
+    .mform {
+        margin-left: 150px;
+        width: 1310px;
+        background: #f4f5f9;
+    }
+    
+    .form {
+        margin-top: 50px;
+        margin-left: 100px;
+    }
+    
+    form {
+        margin-top: 10px;
+        background: #fff;
+        width: 1000px;
+        padding-left: 50px;
+    }
+    
+    .form label {
+        color: #b73577;
+        font-size: 22px;
+        font-family: 'latobold';
+        margin-bottom: 3px !important;
+        font-family: 'Didact Gothic', sans-serif;
+        margin-left: 100px;
+    }
+    
+    .form .title {
+        margin-left: 250px;
+        font-size: 41px;
+        margin-top: 10px;
+        font-family: 'Cantarell', sans-serif;
+    }
+    
+    .form input {
+        display: block;
+        border-radius: 0px;
+        border: 0px solid transparent;
+        color: #333333;
+        border-bottom: 2px solid #666666;
+        max-width: 400px;
+        margin-left: 100px;
+        padding: 12px;
+        font-size: 19px;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        outline: none !important;
+        box-shadow: none !important;
+        font-family: 'Didact Gothic', sans-serif;
+    }
+    
+    .form input[type=radio] {
+        padding: 0px;
+        width: 10px;
+        margin-bottom: 0px;
+        display: inline;
+        font-size: 20px;
+    }
+    
+    .form textarea {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #fff;
+        padding: 15px;
+        outline: none;
+        margin-left: 100px;
+        width: 300px;
+    }
+    
+    .form button {
+        background: #b73577 !important;
+        color: white;
+        padding: 11px;
+        border: 1px solid #b73577;
+        width: 150px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+    
+    @media screen and (max-width:670px) {
+        .mform {
+            width: 480px;
+            margin-left: 0px;
+        }
+        .form {
+            margin-left: 0px;
+            width: 100%;
+            margin-left: 0px;
+        }
+        .mform .title {
+            margin-left: 40px;
+            font-size: 39px;
+        }
+        form {
+            width: 100%;
+            margin-left: 5px;
+            padding-left: 0px;
+            margin-top: 0px;
+        }
+        h5 {
+            font-size: 25px;
+        }
+        .mform input {
+            margin-left: 10px;
+        }
+        .mform label {
+            margin-left: 10px;
+        }
+    }
+    
+    @media screen and (max-width:570px) {
+        .nav {
+            width: 100%;
+        }
+        li span {
+            position: absolute;
+            margin-left: 40px;
+        }
+        .mform {
+            width: 280px;
+            margin-left: 0px;
+            background: #fff;
+        }
+        .form {
+            margin-left: 0px;
+            width: 100%;
+            margin-left: 0px;
+        }
+        .mform input {
+            width: 360px;
+        }
+        .mform .title {
+            margin-left: 0px;
+            font-size: 26px;
+        }
+        form {
+            width: 100%;
+            margin-left: 2px;
+            padding-left: 0px;
+            margin-top: 0px;
+        }
+        .mform textarea {
+            margin-left: 0px;
+        }
+        h5 {
+            font-size: 19px;
+        }
+        .mform input {
+            margin-left: 10px;
+        }
+        .mform label {
+            margin-left: 10px;
+            font-size: 18px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    }
+</style>
+
+<body>
+
+    <header>
+        <div class="nav">
+            <nav>
+                <ul>
+                    <li class="logo">Student</li>
+                    <li>Home</li>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li>About</li>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li> Contact</li>
+                    <li><span class="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                    </li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><button>Signin</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- small Screen Navigation bar -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Signin</a>
+        </div>
+    </div>
+
+    <!-- End Here Small Screen Navigation bar -->
+    <script>
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+    <div class="mform">
+        <div class="form">
+            <br>
+            <!-- <div class="title">Fill the Following Form</div> -->
+            <br>
+            <form action="" method="">
+                <br>
+                <div class="title">Fill the Following Form</div>
+                <br><br><br>
+                <h5 id="basi">Enter your personal details</h5>
+                <br><br>
+                <div id="basic">
+                    <label for="">PRN</label>
+                    <input type="text" name="prn" id="prn" placeholder="Enter your Prn">
+                    <br><br>
+                    <label for="">First Name</label>
+                    <input type="text" name="lname" placeholder="Enter your First Name">
+                    <br><br>
+                    <label for="">Last Name</label>
+                    <input type="text" name="fname" placeholder="Enter your Last name">
+                    <br><br>
+                    <label for="">Father Name Name</label>
+                    <input type="text" name="mname" placeholder="Enter your Father Name">
+                    <br><br>
+                    <label for="">Mother Name</label>
+                    <input type="text" name="mname" placeholder="Enter your Mother Name">
+                    <br><br>
+                    <label for="">Select Gender</label>
+                    <input type="radio" class="form-radio" name="joke" value="bed" /> Male
+                    <input type="radio" class="form-radio" name="joke" value="clock" /> Female <br>
+                    <br><br>
+                    <label for="">Select Date</label>
+                    <input type="date">
+                    <br><br>
+                    <label for="">Upload Photo</label>
+                    <input type="file">
+                </div>
+                <br><br>
+                <h5 id="commu">Communication Details</h5>
+                <br><br>
+                <div id="comm">
+                    <label for="">Enter your Address</label><br><br>
+                    <textarea name="address" id="" cols="30" rows="10" placeholder="Enter your Permanant Address"></textarea>
+                    <br><br>
+                    <label for="">Enter your Number</label>
+                    <input type="number" name="number" placeholder="Enter your Mobile Number">
+                    <br><br>
+                    <label for="">Enter your E-Mail Address</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your Email Address">
+                </div>
+
+                <br><br>
+                <h5 id="edu">Educational Details</h5>
+                <br><br>
+                <div id="ed">
+                    <label for="">Enter your SSC Marks</label>
+                    <input type="text" name="ssc" placeholder="Enter your SSC Marks">
+                    <br><br>
+                    <label for="">Enter your HSC/Diploma Marks</label>
+                    <input type="text" name="hsc" placeholder="Enter your HSC/Diploma Maeks">
+                    <br><br>
+                    <label for="">Enter your Engineering CGPA</label>
+                    <input type="text" name="eng" placeholder="Enter your Engineering Grade">
+                </div>
+                <br><br>
+                <h5 id="intern">Internship Details</h5>
+                <br><br>
+                <div id="int">
+                    <label for="">Summer Internship</label>
+                    <input type="text" class="intern" name="first" placeholder="First Internship">
+                    <input type="text" class="intern" name="secound" placeholder="Secound Internship">
+                    <input type="text" class="intern" name="third" placeholder="third Internship">
+                </div>
+                <br><br>
+
+                <h5 id="Personal">Personal Details</h5>
+                <br><br>
+                <div id="per">
+                    <label for="">Enter Extra Cirriculam Achhivement</label>
+                    <input type="text" name="achive" placeholder="Enter your Extra Cirriculam Achivement">
+                    <br><br>
+                    <label for="">Enter Language you Known</label>
+                    <input type="text" name="language" placeholder="Enter the Language you Known">
+                    <br><br>
+                    <label for="">Enter your Hobbies</label>
+                    <input type="text" name="hobby" placeholder="Enter your Hobbies">
+                </div>
+
+                <br><br>
+                <h5 id="project">Project Details</h5>
+                <br><br>
+                <div id="pro">
+                    <label for="" class="minor">Minor 1</label>
+                    <input type="text" class="minor_1" name="title" placeholder="Enter title of Project">
+                    <input type="text" class="minor_1" name="plateform" placeholder="Enter wich plateform Used">
+                    <input type="text" class="minor_1" name="language" placeholder="Enter which Languaged Used">
+                    <br><br>
+                    <label for="" class="minor">Mino 2</label>
+                    <input type="text" class="minor_1" name="title" placeholder="Enter title of Project">
+                    <input type="text" class="minor_1" name="plateform" placeholder="Enter wich plateform Used">
+                    <input type="text" class="minor_1" name="language" placeholder="Enter which Languaged Used">
+                </div>
+                <br><br>
+                <h5 id="communication">Award & Achivement</h5>
+                <br><br>
+                <div id="communi">
+                    <input type="text" name="award1" placeholder="Enter Achivement 1"><br>
+                    <input type="text" name="award2" placeholder="Enter Achivement 2"><br>
+                    <input type="text" name="award3" placeholder="Enter Achivement 3"><br>
+                    <input type="text" name="award4" placeholder="Enter Achivement 4"><br>
+                </div>
+                <br><br>
+                <h5 id="Certificate">Certification</h5>
+                <br>
+                <div id="certi">
+                    <input type="text" name="certificate1" placeholder="Enter title of Certificate 1"><br>
+                    <input type="text" name="certificate1" placeholder="Enter title of Certificate 2"><br>
+                    <input type="text" name="certificate1" placeholder="Enter title of Certificate 3"><br>
+                    <input type="text" name="certificate1" placeholder="Enter title of Certificate 4"><br>
+                </div>
+
+
+                <br><br>
+                <button>Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script language="JavaScript">
+        function setVisibility(id, visibility) {
+            document.getElementById(id).style.display = visibility;
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#basi").click(function() {
+                $("#basic").toggle();
+            });
+
+            $('#commu').click(function() {
+                $('#comm').toggle();
+            });
+
+
+            $('#edu').click(function() {
+                $('#ed').toggle();
+            });
+
+            $('#intern').click(function() {
+                $('#int').toggle();
+            });
+
+            $('#Personal').click(function() {
+                $('#per').toggle();
+            });
+
+
+            $('#project').click(function() {
+                $('#pro').toggle();
+            });
+
+            $('#communication').click(function() {
+                $('#communi').toggle();
+            });
+
+            $('#Certificate').click(function() {
+                $('#certi').toggle();
+            });
+
+        });
+    </script>
+
+    <br><br>
+    <div class="foo">
+        <center>&copy; All Rights Reserved</center>
+    </div>
+
+</body>
+
+</html>

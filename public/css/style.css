@@ -1,0 +1,118 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-div {
+    margin-left: 510px;
+    margin-top: 80px;
+    margin-right: 100px;
+    width: 500px;
+}
+
+.main-div input {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 300px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+}
+
+.main-div button {
+    background: #5d8ffc;
+    color: #fff;
+    border: 1px solid #5d8ffc;
+    border-radius: 5px;
+    padding: 15px;
+    display: block;
+    width: 20%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    cursor: pointer;
+}
+
+.main-div .title {
+    margin-left: 0px;
+    font-family: 'Underdog', cursive;
+    font-size: 20px;
+}
+
+.google {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-left: #5d8ffc;
+    margin-left: 80px;
+    cursor: pointer;
+}
+
+.github {
+    margin-left: 180px;
+    cursor: pointer;
+}
+
+.social-login {
+    float: right;
+    margin-top: 20px;
+    position: absolute;
+    margin-left: 5s0px;
+    border: #5d8ffc;
+}
+
+.hr {
+    margin-top: 30px;
+    width: 330px;
+}
+
+p {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+p span {
+    background: #fff;
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+.signup {
+    position: absolute;
+    margin-top: 90px;
+    margin-left: 570px;
+    font-size: 21px;
+    font-family: 'Underdog', cursive;
+}
+
+.signup a {
+    color: black;
+}
+
+@media screen and (max-width:670px) {
+    .main-div {
+        margin-left: 20px;
+        margin-top: 30px;
+        width: 300px;
+    }
+    .main-div .title {
+        font-family: 'Roboto', sans-serif;
+    }
+    .main-div button {
+        width: 120px;
+    }
+    .signup {
+        position: absolute;
+        margin-top: 90px;
+        margin-left: 80px;
+        font-family: 'Roboto', sans-serif;
+    }
+}

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MITAOE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="public/css/swiper/swiper.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 500px)" href="css/mobile.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 501px)" href="css/main.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .main {
+        height: 470px;
+    }
+    
+    .slides ul {
+        height: 560px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .container ul li a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        grid-gap: 0px;
+        margin-left: 130px;
+    }
+    
+    .grid button {
+        width: 120px;
+    }
+    
+    .card {
+        transition: transform .2s;
+    }
+    
+    .card:hover {
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        transform: scale(1.1);
+    }
+    
+    .cards a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .cards h1 {
+        font-size: 48px;
+    }
+    
+    .guide h1 {
+        font-size: 48px;
+    }
+    
+    .contact h1 {
+        font-size: 45 px;
+    }
+    
+    .card img {
+        width: 100%;
+    }
+    
+    .card .description {
+        font-family: 'Hind Siliguri', sans-serif;
+        font-size: 16px;
+    }
+    
+    .oppurnitytext {
+        width: 740px;
+        text-align: center;
+        margin-left: 270px;
+        text-align: justify;
+        font-size: 17px;
+    }
+    
+    .usetext {
+        width: 740px;
+        text-align: center;
+        margin-left: 270px;
+        text-align: justify;
+        font-size: 17px;
+    }
+    
+    .grids {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+        grid-gap: 20px;
+        margin-left: 170px;
+    }
+    
+    .guide span {
+        font-size: 16px;
+    }
+    /* .overlay{
+  border: 1px solid #CC0;
+  margin: auto;
+
+  text-align:center;
+  width: 50%;
+} */
+    
+    .paregrid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        color: white;
+        margin-top: 80px;
+        margin-left: 100px;
+        font-size: 29px;
+    }
+    
+    .paregrid h4 {
+        font-size: 30px;
+    }
+    
+    .processflowgrid {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    
+    .wrapper {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        background: #F8F8F8;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .slid {
+        width: 1000px;
+        height: 100px;
+        position: relative;
+        background: white;
+        box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        overflow: hidden;
+    }
+    
+    .sli {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        animation: slideshow 7s linear infinite;
+    }
+    
+    .sli img {
+        height: 140px;
+        padding: 0 30px 0 30px;
+    }
+    
+    @keyframes slideshow {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    
+    .slid::before,
+    .slid::after {
+        height: 100px;
+        width: 200px;
+        position: absolute;
+        content: "";
+        background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+        z-index: 2;
+    }
+    
+    .slid::before {
+        left: 0;
+        top: 0;
+    }
+    
+    .slid::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
+    }
+    
+    .footergrid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin-left: 140px;
+        grid-gap: 30px;
+    }
+    
+    .socialgrid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    
+    .footercolor {
+        background: #3f51b5 !important;
+        background: #6879d6 !important;
+        color: white;
+        /* border-top-right-radius:  50%;  */
+    }
+    
+    .footergrid a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .item1 iframe {
+        width: 500px;
+        height: 280px;
+        ;
+    }
+    
+    @media screen and (max-width:768px) {
+        .grid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 210px;
+            grid-gap: 20px;
+        }
+    }
+    
+    @media screen and (max-width:670px) {
+        .brand-logo img {
+            height: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 80px;
+            grid-gap: 20px;
+        }
+        .cards h1 {
+            font-size: 41px;
+        }
+        .guide h1 {
+            font-size: 41px;
+        }
+        .contact h1 {
+            font-size: 41px;
+        }
+        .grids {
+            display: grid;
+            grid-template-columns: auto;
+            width: 200px;
+            margin-left: 0px;
+        }
+        .main .caption font {
+            font-size: 40px;
+        }
+        .processflowgrid {
+            display: grid;
+            grid-template-columns: auto;
+        }
+        .paregrid {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            color: white;
+            margin-top: 80px;
+            margin-left: 10px;
+            font-size: 22px;
+        }
+        .footergrid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 170px;
+        }
+        .item1 iframe {
+            width: 400px;
+            height: 200px;
+            ;
+        }
+    }
+    
+    @media screen and (max-width:375px) {
+        .grid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 20px;
+            grid-gap: 20px;
+        }
+        .paregrid {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            color: white;
+            margin-top: 80px;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+        .num {
+            font-size: 23px;
+        }
+        .footergrid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 120px;
+        }
+        .item1 iframe {
+            width: 300px;
+            height: 150px;
+            ;
+        }
+    }
+    
+    @media screen and (max-width:360px) {
+        .grid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 20px;
+            grid-gap: 20px;
+        }
+        .paregrid {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            color: white;
+            margin-top: 80px;
+            margin-left: 10px;
+            font-size: 15px;
+        }
+        .num {
+            font-size: 23px;
+        }
+        .footergrid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 120px;
+        }
+        .item1 iframe {
+            width: 200px;
+            height: 130px;
+            ;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <nav class="nav-wrapper transparent" id="mainNav">
+            <div class="container">
+                <a href="#" class="brand-logo" style="color:black;"><img height="60px" src="public/img/logo-color-1.png" alt=""></a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons" style="color: black;">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down" style="font-family: 'Roboto', sans-serif;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#contact">Contact us</a></li>
+                    <li><a href="login.php">Login</a></li>
+
+
+                </ul>
+
+                <ul class="sidenav gray lighten-2" id="mobile-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#contact">Contact us</a></li>
+                    <li><a href="login.php">Login</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="public/img/header.png">
+                    <!-- random image -->
+                    <div class="caption left-align">
+                        <font size=7>“Success doesn’t come to you.You go to it”</font>
+                        <h5 class="light grey-text text-lighten-3"></h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="public/img/header2.png">
+                    <!-- random image -->
+                    <div class="caption right-align">
+                        <font size=7>“Fall seven times, stand up eight.”</font>
+                        <h5 class="light grey-text text-lighten-3"> </h5>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <style>
+        .swiper-container {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+        }
+        
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 410px;
+            background: #fff;
+        }
+        
+        .swiper-slide .imgBx {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .swiper-slide .imgBx img {
+            width: 100%;
+        }
+        
+        .swiper-slide .details {
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        
+        .swiper-slide .details h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+        
+        .swiper-slide .details h3 span {
+            font-size: 16px;
+            color: #f44336;
+        }
+    </style>
+
+    <!-- <marquee behavior="" direction="" style="font-size:23px;">Greeting from TPO</marquee> -->
+    <div class="cards">
+        <center>
+            <h2 style=" text-transform: uppercase;font-family: 'Roboto', sans-serif;">Campus Updates</h2>
+            <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+        </center>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Shyam Put the PHP Code Inside that Swiper-Slide -->
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem;">
+                        <img src="public/img/c1.gif" class="card-img-top" alt="...">
+                        <div class="title">
+                            <center>
+                                <h2>Company 1</h2>
+                            </center>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Company description Here..Company description Here..Company description Here..Company description Here..</p>
+                        </div>
+                        <div class="button">
+                            <center><button class="btn btn-primary"><a href="form2.php">Register</a></button></center>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+                <!-- This div is Close Here -->
+
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem;">
+                        <img src="public/img/c1.gif" class="card-img-top" alt="...">
+                        <div class="title">
+                            <center>
+                                <h2>Company 2</h2>
+                            </center>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Company description Here..Company description Here..Company description Here..Company description Here..</p>
+                        </div>
+                        <div class="button">
+                            <center><button class="btn btn-primary"><a href="form2.php">Register</a></button></center>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card" style="width: 20rem;">
+                        <img src="public/img/c1.gif" class="card-img-top" alt="...">
+                        <div class="title">
+                            <center>
+                                <h2>Company 3</h2>
+                            </center>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Company description Here..Company description Here..Company description Here..Company description Here..</p>
+                        </div>
+                        <div class="button">
+                            <center><button class="btn btn-primary"><a href="form2.php">Register</a></button></center>
+                        </div>
+                        <br>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+        <!-- Swiper JS -->
+        <script src="public/js/swiper/swiper.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 10,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+        </script>
+
+        <br>
+        <!--Use of Portal-->
+        <section class="pt100 pb100" id="aboutt">
+            <div class="container">
+                <div class="section_title">
+                    <center>
+                        <h2 style=" text-transform: uppercase;">OBJECTIVES</h2>
+                        <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+                    </center>
+
+                </div><br><br>
+                <div class="row content-center">
+                    <div class="col-12">
+                        <p>
+                            The purpose of the Placement Cell is to guide students to choose right career path and to provide domain knowledge, skill and aptitude to cater the manpower requirements of the Industry.The Institute has evolved mechanism for its students wherein they
+                            are given training and guidance opportunity by the eminent industry members and professionals.Collecting feedback from employers to know where our students stand in the selection process and guiding them accordingly.Identifying
+                            the needs and expectations of the companies to assist them in recruiting most suitable candidates.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+        <!--Use of Portal end -->
+        <!-- Process Flow  -->
+        <section class="pt100 pb100" id="aboutt">
+            <div class="container">
+                <div class="section_title">
+                    <center>
+                        <h2 style=" text-transform: uppercase;">Process Flow</h2>
+                        <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+                    </center>
+
+                </div><br><br>
+                <div class="processflowgrid">
+                    <div class="process1">
+
+                        <center> <img src="public/img/register.png" width="170px;" alt=""></center>
+                        <br>
+                        <center>
+                            <h4>Register</h4>
+                        </center>
+                    </div>
+
+                    <div class="process2">
+                        <center> <img src="public/img/viewcompany.png" width="170px;" alt=""><br><br>
+                            <h4>View Company</h4>
+                        </center>
+                    </div>
+                    <div class="process3">
+                        <center><img src="public/img/apply2.png" width="170px;" alt=""><br><br>
+                            <h4>Apply</h4>
+                        </center>
+                    </div>
+                    <div class="process4">
+                        <center> <img src="public/img/getplace.png" width="170px;" alt=""><br><br>
+                            <h4>Get Placed</h4>
+                        </center>
+                    </div>
+                </div>
+
+                <br>
+                <div class="row content-center">
+                    <div class="col-12">
+                        <p>
+                            <!-- Process Flow Tex Here -->
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Parellex about the Student Places-->
+
+
+        <div class="parallax-container" style="height:240px;">
+            <div class="parallax"><img src="public/img/inner_cover.png"></div>
+            <div class="overlay">
+                <div class="paregrid">
+                    <div class="pre1">
+
+                        <span class="num">20</span><br>
+                        <span>
+                            
+                        Register</span>
+                    </div>
+
+                    <div class="pre2">
+                        <span class="num">20 <br></span><br>
+                        <span>
+                        View Company</span>
+                    </div>
+                    <div class="pre3">
+                        <span class="num">15<br></span><br>
+                        <span>
+                           
+                        Apply</span>
+                    </div>
+                    <div class="pre4">
+                        <span class="num">10 <br></span><br>
+                        <span>
+                           
+                            get Placed</span>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(".num").counterUp({
+                        delay: 10,
+                        time: 1000
+                    });
+                </script>
+            </div>
+        </div>
+        <br>
+
+        <!-- our Recuriuters -->
+        <div class="recuriters">
+            <center>
+                <h2 style=" text-transform: uppercase;">Our recuriters</h2>
+                <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+            </center>
+            <div class="wrapper">
+                <div class="slid">
+                    <div class="sli">
+                        <img src="public/img/recuter/infosys.jpg" />
+                        <img src="public/img/recuter/Accenture-logo.png" />
+
+                        <img src="public/img/recuter/cognizent.png" />
+                        <img src="public/img/recuter/Accenture-logo.png" />
+                    </div>
+                    <div class="sli">
+                        <img src="public/img/recuter/infosys.jpg" />
+                        <img src="public/img/recuter/Accenture-logo.png" />
+
+                        <img src="public/img/recuter/cognizent.png" />
+                        <img src="public/img/recuter/Accenture-logo.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Process Flow end -->
+        <br><br>
+        <!--Use of Portal-->
+        <section class="pt100 pb100" id="aboutt">
+            <div class="container">
+                <div class="section_title">
+                    <center>
+                        <h2 style=" text-transform: uppercase;">Basic use of Portal</h2>
+                        <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+                    </center>
+
+                </div><br><br>
+                <div class="row content-center">
+                    <div class="col-12">
+                        <p>
+                            The challenge in today’s global and highly competitive markets are immense; and one needs to perform with utmost quality and professionalism. It has always been our desire to enhance career prospects of our students though excellent teaching, training
+                            and placement.We make sure that each of our students be given right industry exposure and get hold of requisite skill to meet the high end corporate expectations.The Placement Cell of the Institute intends to provide Training
+                            in the pre-placement stage which is immensely required for grabbing a lucrative job and also provide placement assistance to all students. Industry is always on the lookout for students with good academic background, who are
+                            vibrant, energetic, attentive, fast learners, adaptive, good communicator and ready to accept challenges. The Institute is com¬mitted to offer right talent at right place.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+        <!--Use of Portal end -->
+
+        <!-- Youtube Video Here for Quick Guide -->
+        <div class="guide">
+            <center>
+                <h2 style=" text-transform: uppercase;">How it Works</h2>
+                <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+            </center><br><br>
+            <div class="grids">
+                <div class="item1">
+                    <iframe width="300px;" src="https://www.youtube.com/embed/LVjqAvyAVTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="item2">
+                    <div class="title">
+                        <center>
+                            <h4>Quick Guide</h4>
+                        </center> <br>
+                    </div>
+                    <span>Check out how the Placement portal will be works. Here is the Short Guide which Explain how to use this Site. Please see this video if you are not able to perform any Action  </span>
+                    <br>
+                    <strong><br>
+       -- Placement Cell</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <!-- <script src="main.js"></script> -->
+
+        <br>
+        <!-- footer -->
+
+        <div class="footercolor">
+            <br><br>
+            <div class="footer">
+                <div class="footergrid">
+                    <div class="footer1">
+                        <h3>Important Links</h3><br>
+                        <ul>
+                            <li><a href="#">Fill Registration Form</a></li>
+                        </ul>
+                        <h6>Rules & Regulation</h6>
+                    </div>
+                    <div class="footer2">
+                        <h3>Developer</h3>
+                        <ul><br>
+                            <li><a href="#">Shyam Pandav</a></li>
+                            <li><a href="#">Pavan Patil</a></li>
+                        </ul>
+                        <h6>Guidence</h6>
+                        <a href="#">Rudragouda Patil</a>
+                    </div>
+                    <div class="footer3">
+                        <h3>Reach to us</h3>
+                        <div class="inlines">
+                            <br>
+                            <a href="#"><i class="fa fa-facebook" style="font-size:26px"></i></a> &nbsp;&nbsp;&nbsp;
+                            <a href="#"><i class="fa fa-linkedin" style="font-size:26px"></i></a> &nbsp;&nbsp;&nbsp;
+                            <a href="#"><i class="fa fa-twitter" style="font-size:26px"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+                <br>
+
+            </div>
+        </div>
+        <div class="copyright" style="background: #5265cf;color: white">
+            <center>
+                <h6>&copy; MITAOE 2019-20</h6>
+            </center>
+        </div>
+        <!-- Footer End Here -->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.slider');
+                var instances = M.Slider.init(elems, options);
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function() {
+                $('.slider').slider();
+            });
+        </script>
+
+        <script type="text/javascript" src="particles.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+        <script>
+            $(document).ready(function() {
+                $('.sidenav').sidenav();
+                $('.materialboxed').materialbox();
+                $('.parallax').parallax();
+                $('.tabs').tabs();
+                $('.datepicker').datepicker();
+                $('.carousel').carousel();
+
+            });
+        </script>
+        <script>
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+.main {
+    height: 470px;
+}
+
+.slides ul {
+    height: 560px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    grid-gap: 0px;
+    margin-left: 20px;
+}
+
+.item1 img {
+    height: 250px;
+    width: 600px;
+}
+
+.item1 {
+    margin-top: 60px;
+}
+
+.item2 {
+    width: 100%;
+}
+
+.footergrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 140px;
+    grid-gap: 30px;
+}
+
+.footercolor {
+    background: #3f51b5 !important;
+    background: #6879d6 !important;
+    color: white;
+    /* border-top-right-radius:  50%;  */
+}
+
+.footergrid a {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width:768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 210px;
+        grid-gap: 20px;
+    }
+    .item1 {
+        margin-top: 30px;
+    }
+    .item1 img {
+        height: 250px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:670px) {
+    .brand-logo img {
+        height: 50px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 80px;
+        grid-gap: 20px;
+    }
+    .footergrid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 170px;
+    }
+    .item1 {
+        margin-top: 30px;
+    }
+    .item1 img {
+        height: 250px;
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:414px) {
+    .grid {
+        margin-left: 20px;
+    }
+    .footergrid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 130px;
+    }
+    .item1 {
+        margin-top: 30px;
+    }
+    .item1 img {
+        height: 250px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .grid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 20px;
+        grid-gap: 20px;
+    }
+    .footergrid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 120px;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .grid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 18px;
+        grid-gap: 0px;
+    }
+    .footergrid {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left: 120px;
+    }
+    .item1 {
+        margin-top: 30px;
+    }
+    .item1 img {
+        height: 250px;
+        width: 300px;
+    }
+}

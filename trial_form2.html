@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MITAOE</title>
+    <link rel="stylesheet" href="form.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+
+<style>
+#basic,#comm,#ed,#per,#communi,#certi{
+    margin-left: 600px;
+}
+h2{
+    font-family: 'Nunito', sans-serif;
+}
+.form-b{
+    background: #4258C2;
+    color: white;
+    padding: 11px;
+    border: 1px solid #4258c2;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 590px;
+}
+@media screen and (max-width:670px){
+    #basic,#comm,#ed,#per,#communi,#certi{
+    margin-left: 50px;
+}
+.form-b{
+    margin-left:50px;
+}
+}
+</style>
+
+<body>
+
+
+        <header>
+                <div class="nav">
+                    <nav>
+                        <ul>
+                          <li class="logo">Student</li>
+                          <li>Home</li>
+                       
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li>About</li>
+                           
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li> Contact</li>
+                            <li><span  class="menu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                            </li>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <li><button>Signin</button></li>
+                        </ul>
+                    </nav>
+                </div>
+        
+        
+            <br><br><br><br>
+        <!-- small Screen Navigation bar -->
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+              <a href="#">Signin</a>
+            </div>
+          </div>
+          
+        <!-- End Here Small Screen Navigation bar -->
+        
+            </header>
+            <script>
+                    function openNav() {
+                      document.getElementById("myNav").style.width = "100%";
+                    }
+                    
+                    function closeNav() {
+                      document.getElementById("myNav").style.width = "0%";
+                    }
+                    </script>
+
+
+<div class="main-title">
+    <center><h1>Fill the Following Details</h1></center>
+</div><br>
+<br>
+    <div class="main-div">
+        <form action="">
+                <h2 id="basi">Basic Details</h2>
+                <br>
+                <hr><br>
+                <!-- <legend id="basi">Basic Details</legend> -->
+                <div id="basic">
+                <input type="text" name="prn" id="prn" placeholder="Enter your Prn">
+                 <input type="text" name="name" placeholder="Enter your First Name">
+                 <input type="text" name="surname" placeholder="Enter your Last Name">
+                 <input type="text" name="fname" placeholder="Enter your father Name">
+                 <input type="text" name="mname" id="" placeholder="Enter your Mother name">
+                 <input type="radio" class="form-radio" name="joke" value="bed"/> Male
+                 <input type="radio" class="form-radio" name="joke" value="clock"/> Female <br>
+                 <input type="date">
+                 <input type="file">
+                </div>
+            
+<br>
+             <h2 id="commu">Communication Details</h2>
+             <br><hr><br>
+                
+                <div id="comm">
+                <textarea name="address" id="" cols="30" rows="10" placeholder="Enter your Permanant Address"></textarea>
+                <br><br>
+                <input type="number" name="number" placeholder="Enter your Mobile Number">
+                <input type="email" name="email" id="email" placeholder="Enter your Email Address">
+            </div>    
+          
+<br>
+              <h2 id="edu">Educational Details</h2>
+                 <br><hr><br>
+                    <div id="ed">
+                    <input type="text" name="ssc" placeholder="Enter your SSC Marks">
+                    <input type="text" name="hsc" placeholder="Enter your HSC/Diploma Maeks">
+                    <input type="text" name="eng" placeholder="Enter your Engineering Grade">
+                </div>    
+               
+<br>
+                  <h2 id="intern">Internship Details</h2>
+                  <br><hr><br>     
+                  <div id="int">
+                        <label for="" class="summmer-intern">Summer Internship</label>
+                        <input type="text" class="intern" name="first" placeholder="First Internship">
+                        <input type="text" class="intern" name="secound" placeholder="Secound Internship">
+                        <input type="text" class="intern" name="third" placeholder="third Internship">
+                    </div>
+                        </fieldset>
+<br>
+
+                       <h2 id="Personal">Personal Details</h2>
+                        <br><hr><br>
+                            <div id="per">
+                            <input type="text" name="achive" placeholder="Enter your Extra Cirriculam Achivement">
+                            <input type="text" name="language" placeholder="Enter the Language you Known">
+                            <input type="text" name="hobby" placeholder="Enter your Hobbies">
+                        </div>    
+                        </fieldset>
+<br>
+                            <h2 id="project">Project Details</h2>
+                              <br><hr><br>
+                                <div id="pro">
+                                <label for="" class="minor">Minor 1</label>
+                                <input type="text" class="minor_1" name="title" placeholder="Enter title of Project">
+                                <input type="text" class="minor_1" name="plateform" placeholder="Enter wich plateform Used">
+                                <input type="text" class="minor_1" name="language" placeholder="Enter which Languaged Used">
+<br>
+                                <label for="" class="minor">Mino 2</label>
+                                <input type="text" class="minor_1" name="title" placeholder="Enter title of Project">
+                                <input type="text" class="minor_1" name="plateform" placeholder="Enter wich plateform Used">
+                                <input type="text" class="minor_1" name="language" placeholder="Enter which Languaged Used">
+                            </div>    
+                            </fieldset>
+<br>
+                               <h2 id="communication"> Award & Achivement</h2>
+                                    <br><hr><br>
+                                    <div id="communi">
+                                    <input type="text" name="award1" placeholder="Enter Achivement">
+                                    <input type="text" name="award2" placeholder="Enter Achivement">
+                                    <input type="text" name="award3" placeholder="Enter Achivement">
+                                    <input type="text" name="award4" placeholder="Enter Achivement">
+                                </div>
+                                    </fieldset>
+<br>
+                                  <h2 id="Certificate">Certification</h2>
+                                        <br><hr><br>
+                                        <div id="certi">
+                                        <input type="text" name="certificate1" placeholder="Enter title of Certificate">
+                                        <input type="text" name="certificate1" placeholder="Enter title Certificate">
+                                        <input type="text" name="certificate1" placeholder="Enter title Certificate">
+                                        <input type="text" name="certificate1" placeholder="Enter title Certificate">
+                                    </div>
+                                    <hr>
+                                       <br><br>
+
+<button class="form-b">Submit</button>
+        </form>
+        <br><br>
+    </div>
+
+
+
+<script>
+
+$(document).ready(function(){
+  $("#basi").click(function(){
+    $("#basic").toggle();
+  });
+
+$('#commu').click(function(){
+    $('#comm').toggle();
+});
+
+
+$('#edu').click(function(){
+    $('#ed').toggle();
+});
+
+$('#intern').click(function(){
+    $('#int').toggle();
+});
+
+$('#Personal').click(function(){
+    $('#per').toggle();
+});
+
+
+$('#project').click(function(){
+    $('#pro').toggle();
+});
+
+$('#communication').click(function(){
+    $('#communi').toggle();
+});
+
+$('#Certificate').click(function(){
+    $('#certi').toggle();
+});
+
+});
+</script>
+
+
+</body>
+</html>

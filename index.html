@@ -1,0 +1,456 @@
+<?php
+    require 'API/db.php';
+
+    $stmt = $conn->prepare("select company_name,company_description,url from company_details");
+    $stmt->execute();
+    $result = $stmt->get_result();
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MITAOE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 500px)" href="css/mobile.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 501px)" href="css/main.css" />
+
+    <!-- Files for the Courserl -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Files end here -->
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="public/css/index.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="nav-wrapper transparent" id="mainNav">
+            <div class="container">
+                <a href="index.php" class="brand-logo" style="color:black;">MITAOE</a>
+                <!-- <img height="60px" src="public/img/logo-color-1.png" alt=""> -->
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons" style="color: black;">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down" style="font-family: 'Roboto', sans-serif;font-size: 24px;">
+                    <li><a style="font-size:14px;" href="index.php">Home</a></li>
+                    <li><a style="font-size:14px;" href="contact_us.php">Contact us</a></li>
+                    <li><a style="font-size:14px;" href="login.php">Login</a></li>
+
+
+                </ul>
+
+                <ul class="sidenav gray lighten-2" id="mobile-menu">
+                    <li><a style="font-size:14px;" href="index.php">Home</a></li>
+                    <li><a style="font-size:14px;" href="contact_us.php">Contact us</a></li>
+                    <li><a style="font-size:14px;" href="login.php">Login</a></li>
+                    <li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <div class="main">
+        <div class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="public/img/header.png">
+                    <!-- random image -->
+                    <div class="caption left-align">
+                        <font size=7>“Success doesn’t come to you.You go to it”</font>
+                        <h5 class="light grey-text text-lighten-3"></h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="public/img/header2.png">
+                    <!-- random image -->
+                    <div class="caption right-align">
+                        <font size=7>“Fall seven times, stand up eight.”</font>
+                        <h5 class="light grey-text text-lighten-3"> </h5>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+
+    <!-- Slider for The Place Student  -->
+   <!-- Slider for The Place Student  -->
+<div class="demo">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <h2 style=" text-transform: uppercase;">Campus update</h2>
+                <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+            </center>
+
+            <div id="testimonial-slider" class="owl-carousel">
+                <?php
+                        if ($result->num_rows > 0){
+                            while ($rows = $result->fetch_assoc()){
+                            ?>
+                    <div class="testimonial">
+                        <div class="card" style="width: 30rem;">
+                            <img src="public/img/c1.gif" class="card-img-top" alt="...">
+                            <div class="title">
+                                <center>
+                                    <h2>
+                                        <?php echo $rows['company_name'];?>
+                                    </h2>
+                                </center>
+                            </div>
+                            <div class="card-body">
+                                <p style="height: 70px; overflow-y : scroll;hover:text-decoration:none;" class="card-text">
+                                    <?php echo $rows['company_description'];?>
+                                </p>
+                            </div><br>
+                            <div class="button">
+                                <center><button class="btn wow fadeInUp"><a style="color:white;" href="<?php echo $rows['url'];?>">Apply</a></button></center>
+                            </div>
+                            <br>
+                        </div>
+                        <br>
+                    </div>
+
+                    
+                    <?php
+                            }
+                        }
+                    ?>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <!-- End here -->
+    <!--Use of Portal-->
+    <section class="pt100 pb100" id="aboutt">
+        <div class="container">
+            <div class="section_title">
+                <center>
+                    <h2 style=" text-transform: uppercase;">OBJECTIVES</h2>
+                    <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+                </center>
+
+            </div><br><br>
+            <div class="row content-center">
+                <div class="col-12">
+                    <p>
+                        The purpose of the Placement Cell is to guide students to choose right career path and to provide domain knowledge, skill and aptitude to cater the manpower requirements of the Industry.The Institute has evolved mechanism for its students wherein they
+                        are given training and guidance opportunity by the eminent industry members and professionals.Collecting feedback from employers to know where our students stand in the selection process and guiding them accordingly.Identifying
+                        the needs and expectations of the companies to assist them in recruiting most suitable candidates.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!--Use of Portal end -->
+    <!-- Process Flow  -->
+    <section class="pt100 pb100" id="aboutt">
+        <div class="container">
+            <div class="section_title">
+                <center>
+                    <h2 style=" text-transform: uppercase;">Process Flow</h2>
+                    <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+                </center>
+
+            </div><br><br>
+            <div class="processflowgrid">
+                <div class="process1">
+
+                    <center> <img src="public/img/register.png" width="170px;" alt=""></center>
+                    <br>
+                    <center>
+                        <h4>Register</h4>
+                    </center>
+                </div>
+
+                <div class="process2">
+                    <center> <img src="public/img/viewcompany.png" width="170px;" alt=""><br><br>
+                        <h4>View Company</h4>
+                    </center>
+                </div>
+                <div class="process3">
+                    <center><img src="public/img/apply2.png" width="170px;" alt=""><br><br>
+                        <h4>Apply</h4>
+                    </center>
+                </div>
+                <div class="process4">
+                    <center> <img src="public/img/getplace.png" width="170px;" alt=""><br><br>
+                        <h4>Get Placed</h4>
+                    </center>
+                </div>
+            </div>
+
+            <br>
+            <div class="row content-center">
+                <div class="col-12">
+                    <p>
+                        <!-- Process Flow Tex Here -->
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Parellex about the Student Places-->
+
+
+    <div class="parallax-container" style="height:240px;">
+        <div class="parallax"><img src="public/img/inner_cover.png"></div>
+        <div class="overlay">
+            <div class="paregrid">
+                <div class="pre1">
+
+                    <span class="num">20</span><br>
+                    <span>
+                            
+                        Register</span>
+                </div>
+
+                <div class="pre2">
+                    <span class="num">20 <br></span><br>
+                    <span>
+                        View Company</span>
+                </div>
+                <div class="pre3">
+                    <span class="num">15<br></span><br>
+                    <span>
+                           
+                        Apply</span>
+                </div>
+                <div class="pre4">
+                    <span class="num">10 <br></span><br>
+                    <span>
+                           
+                            get Placed</span>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(".num").counterUp({
+                    delay: 10,
+                    time: 1000
+                });
+            </script>
+        </div>
+    </div>
+    <br>
+
+    <!-- our Recuriuters -->
+    <div class="recuriters">
+        <center>
+            <h2 style=" text-transform: uppercase;">Our recuriters</h2>
+            <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+        </center>
+        <div class="wrapper">
+            <div class="slid">
+                <div class="sli">
+                    <img src="public/img/recuter/infosys.jpg" />
+                    <img src="public/img/recuter/Accenture-logo.png" />
+
+                    <img src="public/img/recuter/cognizent.png" />
+                    <img src="public/img/recuter/Accenture-logo.png" />
+                </div>
+                <div class="sli">
+                    <img src="public/img/recuter/infosys.jpg" />
+                    <img src="public/img/recuter/Accenture-logo.png" />
+
+                    <img src="public/img/recuter/cognizent.png" />
+                    <img src="public/img/recuter/Accenture-logo.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Process Flow end -->
+    <br><br>
+    <!--Use of Portal-->
+    <section class="pt100 pb100" id="aboutt">
+        <div class="container">
+            <div class="section_title">
+                <center>
+                    <h2 style=" text-transform: uppercase;">Basic use of Portal</h2>
+                    <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+                </center>
+
+            </div><br><br>
+            <div class="row content-center">
+                <div class="col-12">
+                    <p>
+                        The challenge in today’s global and highly competitive markets are immense; and one needs to perform with utmost quality and professionalism. It has always been our desire to enhance career prospects of our students though excellent teaching, training
+                        and placement.We make sure that each of our students be given right industry exposure and get hold of requisite skill to meet the high end corporate expectations.The Placement Cell of the Institute intends to provide Training in
+                        the pre-placement stage which is immensely required for grabbing a lucrative job and also provide placement assistance to all students. Industry is always on the lookout for students with good academic background, who are vibrant,
+                        energetic, attentive, fast learners, adaptive, good communicator and ready to accept challenges. The Institute is com¬mitted to offer right talent at right place.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!--Use of Portal end -->
+
+    <!-- Youtube Video Here for Quick Guide -->
+    <div class="guide">
+        <center>
+            <h2 style=" text-transform: uppercase;">How it Works</h2>
+            <hr style="border-bottom: 3px solid #94bbe9; width: 50px;">
+        </center><br><br>
+        <div class="grids">
+            <div class="item1">
+                <iframe width="300px;" src="https://www.youtube.com/embed/LVjqAvyAVTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="item2">
+                <div class="title">
+                    <center>
+                        <h4>Quick Guide</h4>
+                    </center> <br>
+                </div>
+                <span>Check out how the Placement portal will be works. Here is the Short Guide which Explain how to use this Site. Please see this video if you are not able to perform any Action  </span>
+                <br>
+                <strong><br>
+       -- Placement Cell</strong>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="main.js"></script>
+
+    <br>
+    <!-- footer -->
+
+    <div class="footercolor">
+        <br><br>
+        <div class="footer">
+            <div class="footergrid">
+                <div class="footer1">
+                    <h3>Important Links</h3><br>
+                    <ul>
+                        <li><a href="#">Fill Registration Form</a></li>
+                    </ul>
+                    <h6>Rules & Regulation</h6>
+                </div>
+                <div class="footer2">
+                    <h3>Developer</h3>
+                    <ul><br>
+                        <li><a href="#">Shyam Pandav</a></li>
+                        <li><a href="#">Pavan Patil</a></li>
+                    </ul>
+                    <h6>Guidence</h6>
+                    <a href="#">Rudragouda Patil</a>
+                </div>
+                <div class="footer3">
+                    <h3>Reach to us</h3>
+                    <div class="inlines">
+                        <br>
+                        <a href="#"><i class="fa fa-facebook" style="font-size:26px"></i></a> &nbsp;&nbsp;&nbsp;
+                        <a href="#"><i class="fa fa-linkedin" style="font-size:26px"></i></a> &nbsp;&nbsp;&nbsp;
+                        <a href="#"><i class="fa fa-twitter" style="font-size:26px"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+
+        </div>
+        <div class="copyright" style="background: #5265cf;color: white">
+            <center>
+                <h6>&copy; MITAOE 2019-20</h6>
+            </center>
+        </div>
+    </div>
+
+    <!-- Footer End Here -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.slider');
+            var instances = M.Slider.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function() {
+            $('.slider').slider();
+        });
+    </script>
+
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.tabs').tabs();
+            $('.datepicker').datepicker();
+            $('.carousel').carousel();
+
+        });
+    </script>
+    <!-- Jquery code for the textamonail code -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#testimonial-slider").owlCarousel({
+                items: 3,
+                itemsDesktop: [1000, 3],
+                itemsDesktopSmall: [979, 2],
+                itemsTablet: [768, 2],
+                itemsMobile: [650, 1],
+                pagination: true,
+                autoPlay: true
+            });
+        });
+    </script>
+</body>
+
+</html>

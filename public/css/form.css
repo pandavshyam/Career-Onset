@@ -1,0 +1,245 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav {
+    box-shadow: 0px 0px 10px 0px black;
+    height: 60px;
+    width: 100%;
+}
+
+ul {
+    margin-top: 10px;
+    list-style: none;
+    display: inline-block;
+}
+
+li {
+    display: inline;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 37px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 100px;
+}
+
+li:nth-child(2) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 770px;
+}
+
+
+li:nth-child(5) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: none;
+}
+li:nth-child(3) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+li:nth-child(4) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+li:nth-child(5) {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+li:nth-child(6) button {
+    background: #4258C2;
+    color: white;
+    padding: 11px;
+    border: 1px solid #4258c2;
+    width: 80px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+li:hover {
+    border-bottom: 2px solid black;
+}
+
+
+.overlay {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0, 0.9);
+overflow-x: hidden;
+transition: 0.5s;
+}
+
+.overlay-content {
+position: relative;
+top: 25%;
+width: 100%;
+text-align: center;
+margin-top: 30px;
+}
+
+.overlay a {
+padding: 8px;
+text-decoration: none;
+font-size: 36px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+color: #f1f1f1;
+}
+
+.overlay .closebtn {
+position: absolute;
+top: 20px;
+right: 45px;
+font-size: 60px;
+}
+
+
+
+@media screen and (max-width: 670px) {
+.overlay a {font-size: 20px}
+.overlay .closebtn {
+font-size: 40px;
+top: 15px;
+right: 35px;
+}
+li {
+    display: inline;
+    cursor: pointer;
+}
+li:nth-child(2){
+    display: none;
+}
+li:nth-child(3){
+    display: none;
+}
+
+li:nth-child(4){
+    display: none;
+}
+
+li:nth-child(6){
+    display: none;
+}
+li:nth-child(5){
+    display: inline;
+
+}
+li span{
+    position: absolute;
+    margin-left: 90px;
+}
+
+
+
+}
+
+
+
+
+
+.main-div input{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 12px;
+    outline: none;
+    width: 300px;
+    margin-bottom: 20px;    
+    }
+    .main-div input::placeholder{
+        font-family: 'Lexend Exa', sans-serif;
+    }
+    .main-div textarea{
+        display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 300px;
+    margin-bottom: 20px;
+    }
+    .main-div input[type = radio]{
+        padding: 0px;
+        width: 10px;
+        margin-bottom: 0px;
+        display: inline;
+        font-size: 20px;
+    }
+    .main-div legend{
+        border: 2px solid black;
+        cursor: pointer;
+       
+        width: 140px;
+        font-size: 22px;
+        height: 30px;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .form-radio{
+    width:17px !important;
+    height:17px!important;
+    }
+    .main-div .communication{
+        width: 250px;
+    }
+    .main-div .intern{
+        display: inline;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    padding: 15px;
+    margin: 10px;
+    outline: none;
+    width: 300px;
+    margin-bottom: 20px;
+  
+    }
+
+    .form-b{
+        background: #4258C2;
+        color: white;
+        padding: 11px;
+        border: 1px solid #4258c2;
+        width: 150px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-left: 620px;
+    }
+    
+    .main-div .summmer-intern{
+        font-size: 20px;
+    }
+    .main-div .minor{
+        font-size: 20px;
+    }
+    
+    .main-div .minor_1{
+        display: inline;
+        margin: 10px;
+    }
+
+    .main-title{
+        font-size: 21px;
+        font-family: 'Lexend Deca', sans-serif;
+    }
+
+    @media screen and (max-width:670px){
+        .main-title{
+            font-size: 18px;
+        }
+    }

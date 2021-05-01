@@ -1,0 +1,498 @@
+<html>
+
+<head>
+    <title>MITAOE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 320px) and (max-device-width: 500px)" href="css/mobile.css" />
+    <link rel="stylesheet" type="text/css" media="screen and (min-device-width: 501px)" href="css/main.css" />
+
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    ul li a {
+        color: black;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    .headergrid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 50px;
+    }
+    
+    .header1 h2 {
+        margin-top: 100px;
+    }
+    
+    .header2 img {
+        float: right;
+    }
+    
+    .header1 button {
+        width: 160px;
+        border: 1px solid black;
+        color: black;
+        background: white;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 20px;
+        font-size: 16px;
+    }
+    
+    .header1 button:hover {
+        background: #4d4dcb;
+        color: white;
+        border: 1px solid #4d4dcb;
+    }
+    
+    .steps h1 {
+        text-transform: uppercase;
+    }
+    
+    .stepgrid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 50px;
+        margin-left: 40px;
+    }
+    
+    .fillform {
+        width: 70%;
+    }
+    
+    .fillform button {
+        width: 160px;
+        border: 1px solid black;
+        color: black;
+        background: white;
+        padding: 10px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 20px;
+        font-size: 20px;
+    }
+    
+    .fillform button:hover {
+        background: #4d4dcb;
+        color: white;
+        border: 1px solid #4d4dcb;
+    }
+    
+    .step3 h3 {
+        margin-left: 130px;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+        grid-gap: 0px;
+        margin-left: 130px;
+    }
+    
+    .grid button {
+        width: 120px;
+    }
+    
+    .card {
+        transition: transform .2s;
+    }
+    
+    .card:hover {
+        -ms-transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+        transform: scale(1.1);
+    }
+    
+    .cards a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .cards h1 {
+        font-size: 48px;
+    }
+    
+    @media only screen and (max-width: 320px) {
+        .stepgrid {
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 10px;
+            margin-left: 00px;
+        }
+        .step1 {
+            width: 60%;
+            margin-left: 10px;
+        }
+        .step2 {
+            width: 60%;
+            margin-left: 100px;
+        }
+        .step3 {
+            width: 60%;
+            margin-left: 100px;
+        }
+    }
+    
+    @media only screen and (max-width: 670px) {
+        .stepgrid {
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap: 60px;
+            margin-left: 10px;
+        }
+        .step1 {
+            width: 60%;
+            margin-left: 100px;
+        }
+        .step2 {
+            width: 60%;
+            margin-left: 100px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: auto;
+            margin-left: 50px;
+            grid-gap: 20px;
+        }
+        .cards h1 {
+            font-size: 41px;
+        }
+        .step3 {
+            width: 60%;
+            margin-left: 100px;
+        }
+        .step3 h3 {
+            margin-left: 70px;
+        }
+        .header2 {
+            display: none;
+        }
+        .header1 h2 {
+            margin-top: 40px;
+            font-size: 25px;
+            margin-left: 25px;
+        }
+        .steps {
+            margin-top: 100px;
+        }
+    }
+    
+    @media only screen and (max-width: 895px) {
+        .steps {
+            margin-top: 100px;
+        }
+        .header2 {
+            display: none;
+        }
+        .step3 h3 {
+            margin-left: 40px;
+        }
+    }
+    
+    #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+    
+    #myBtn:hover {
+        background-color: white;
+    }
+    /* .imagediv{
+    background-image: url("img/divbackground2.png");
+    height: 200px;    
+} */
+</style>
+
+<body>
+
+    <header>
+        <nav class="nav-wrapper transparent" id="mainNav">
+            <div class="container">
+                <a href="#" class="brand-logo" style="color:black;">MITAOE</a>
+                <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+                    <i class="material-icons" style="color: black;">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down" style="font-family: 'Roboto', sans-serif;">
+                    <li><a href="studentdash.html">Home</a></li>
+                    <li><a href="userprofile.html">Profile</a></li>
+                    <li> <a class="modal-trigger" href="#modal1">Notification</a></li>
+
+
+                    <li><a href="#">Logout</a></li>
+
+
+                </ul>
+
+                <ul class="sidenav gray lighten-2" id="mobile-menu">
+                    <li><a href="studentdash.html">Home</a></li>
+                    <li><a href="userprofile.html">Profile</a></li>
+                    <li> <a class="modal-trigger" href="#modal1">Notification</a></li>
+                    <li><a href="#">Logout</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+
+
+        <div class="headergrid">
+            <div class="header1">
+                <center>
+                    <h2>Welcome to MITAOE Placement Portal</h2>
+                    <br>
+                    <button>Apply</button>
+
+                </center>
+            </div>
+            <div class="header2">
+                <img src="public/img/headerbackgroud.svg" width="700px;" class="responsive-img" alt="">
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- Modal Trigger -->
+
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Notification</h4>
+            <p>No New Notification</p>
+
+            <img src="img/notification.png" height="220px" alt="">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close btn btn-primary">Close</a>
+        </div>
+    </div>
+
+
+    <!-- Steps by Step Guide -->
+    <div class="steps">
+        <center>
+            <h1>Steps for Apply</h1>
+            <hr style="border-bottom:3px solid #4d4dcb;width: 50px;">
+        </center>
+
+        <br>
+        <div class="stepgrid">
+            <div class="step1">
+                <center> <img src="public/img/register.png" width="200px;" class="responsive-img" alt=""></center>
+                <center>
+                    <h3>Fill the Registration Form</h3>
+                    <span>It is Mandatory to fill the form for apply for the company. It is compulsary to have an all the document for fill the form.</span>
+                </center>
+                <!-- <span>It is Mandotory to fill the form to apply for the Company</span> -->
+            </div>
+            <div class="step2">
+                <center><img src="public/img/search.jpg" width="200px;" class="responsive-img" alt=""></center>
+                <center>
+                    <h3>Search for Company</h3>
+                    <span>Search the company to apply for the Job. You should search the company based on the differnt criteria</span>
+
+                </center>
+                <!-- <span>Search for the Specific Comapany. That should come in College and apply for the job</span> -->
+            </div>
+            <div class="step3">
+                <center><img src="public/img/apply1.png" width="250px;" class="responsive-img" alt=""></center>
+                <h3>Apply</h3>
+                <span>It is Mandatory to fill the form for apply for the company. It is compulsary to have an all the document for fill the form.</span>
+
+                <!-- <span>Apply for the Job</span> -->
+            </div>
+        </div>
+
+
+    </div>
+    <br>
+
+    <div class="imagediv">
+
+    </div>
+
+    <br><br>
+    <center>
+        <div class="fillform">
+            <center>
+                <h4>It is Mandatory to fill the Registration form first to apply for the Company Please click on below button to fill the form and Apply</h4>
+                <br>
+                <button>Fill form</button>
+
+            </center>
+        </div>
+    </center>
+
+    <br><br><br>
+    <div class="cards">
+        <center>
+            <h2 style="font-size:40px;">Campus Updates</h2>
+            <hr style="border-bottom: 3px solid #4d4dcb; width: 50px;">
+        </center>
+        <br><br>
+        <div class="grid">
+            <!-- card 1 code is Here -->
+            <div class="item1">
+                <div class="card" style="width: 20rem; height: 30%;">
+                    <img src="public/img/c1.gif" class="card-img-top" alt="...">
+                    <div class="title">
+                        <center>
+                            <h2>Company 1</h2>
+                        </center>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Company description Here..Company description Here..Company description Here..Company description Here..</p>
+                    </div>
+                    <div class="button">
+                        <center><button class="btn wow fadeInUp"><a href="form2.php">Register</a></button></center>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+            <!-- card 2 Code is Here -->
+
+            <div class="item2">
+                <div class="card" style="width: 20rem;">
+                    <img src="public/img/c1.gif" class="card-img-top" alt="...">
+                    <div class="title">
+                        <center>
+                            <h2>Company 2</h2>
+                        </center>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Company description Here..Company description Here..Company description Here..Company description Here..</p>
+                    </div>
+                    <div class="button">
+                        <center><button class="btn wow fadeInUp"><a href="form2.php">Register</a></button></center>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+
+            <div class="item3">
+                <div class="card" style="width: 20rem;">
+                    <img src="public/img/c1.gif" class="card-img-top" alt="...">
+                    <div class="title">
+                        <center>
+                            <h2>Company 3</h2>
+                        </center>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Company description Here..Company description Here..Company description Here..Company description Here..</p>
+                    </div>
+                    <div class="button">
+                        <center><button class="btn wow fadeInUp"><a href="form2.php">Register</a></button></center>
+                    </div>
+                    <br>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <br>
+    <br><br>
+    <!-- footer -->
+
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l6">
+                    <h5>About Site</h5>
+                    <p>This Site is useful for the student in MITAOE About their Placement Activities.</p>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="footer-copyright grey darken-4">
+            <div class="container center-align">
+                &copy; 2019 <a href="http://tpcorporation.epizy.com/">MITAOE</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<script>
+    $(document).ready(function() {
+        $('.sidenav').sidenav();
+        $('.materialboxed').materialbox();
+        $('.parallax').parallax();
+        $('.tabs').tabs();
+        $('.datepicker').datepicker();
+        $('.modal').modal();
+
+    });
+</script>
+
+</html>
